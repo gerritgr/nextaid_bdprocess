@@ -1,0 +1,14 @@
+universe = docker
+docker_image = gerritgr/nextaid:latest
+executable = run.sh
+output = train_qm9.$(ClusterId).$(ProcId).out
+error = train_qm9.$(ClusterId).$(ProcId).err
+log = train_qm9.$(ClusterId).log
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+request_GPUs = 1
+request_CPUs = 1
+request_memory = 4G
+requirements = UidDomain == "cs.uni-saarland.de"
++WantGPUHomeMounted = true
+queue
